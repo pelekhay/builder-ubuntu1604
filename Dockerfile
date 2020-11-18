@@ -22,5 +22,7 @@ ENV LC_ALL en_US.UTF-8
 # limit number of open files to 1024, increases the do_rootfs speed
 RUN echo 'ulimit -n 1024' >> /etc/profile
 
+RUN useradd -ms /bin/bash user
+
 ENTRYPOINT ["/bin/sh", "-c"]
 CMD ["cat"]
